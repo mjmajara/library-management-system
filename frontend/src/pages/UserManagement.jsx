@@ -74,7 +74,7 @@ export default function UserManagement() {
 
   const handleDemoLogin = (role) => {
     const user = demoLogin(role);
-    setToast({ type: 'success', text: `Demo session activated: Logged in as ${user.name} (${user.role})` });
+    setToast({ type: 'success', text: `Logged in as ${user.name} (${user.role})` });
   };
 
   const handleUserSaved = (user, message) => {
@@ -127,12 +127,11 @@ export default function UserManagement() {
       <div className="card">
         <div className="card-header">
           <h2 className="card-title">
-            <KeyRound size={20} className="text-primary" />
-            <span>User Authentication Portal</span>
+            <span>User Log in Portal</span>
           </h2>
           {isAuthenticated && (
             <span className={`role-badge ${currentUser.role}`}>
-              Active Session: {currentUser.role.toUpperCase()}
+             {currentUser.role.toUpperCase()}
             </span>
           )}
         </div>
@@ -160,8 +159,8 @@ export default function UserManagement() {
                     {currentUser.name}
                   </h3>
                   <div style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
-                    Membership ID: <span className="isbn-code">{currentUser.membership_id}</span> • Role:{' '}
-                    <strong>{currentUser.role}</strong> • {currentUser.email || 'No email registered'}
+                    Membership ID: <span className="isbn-code">{currentUser.membership_id}</span>Role:{' '}
+                    <strong>{currentUser.role}</strong>  {currentUser.email || 'No email registered'}
                   </div>
                 </div>
               </div>
@@ -169,12 +168,12 @@ export default function UserManagement() {
               <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
                 {!isAdmin && (
                   <button onClick={() => handleDemoLogin('admin')} className="btn btn-secondary btn-sm">
-                    Switch to Admin View
+                  
                   </button>
                 )}
                 {isAdmin && (
                   <button onClick={() => handleDemoLogin('member')} className="btn btn-secondary btn-sm">
-                    Switch to Member View
+                   
                   </button>
                 )}
                 <button onClick={logout} className="btn btn-danger btn-sm">
@@ -199,15 +198,13 @@ export default function UserManagement() {
                   <input
                     id="login-memid"
                     type="text"
-                    placeholder="e.g. ADM-1001 (Admin) or MEM-2001 (Member)"
+                    placeholder="MJ-77"
                     className="form-control"
                     value={loginMembershipId}
                     onChange={(e) => setLoginMembershipId(e.target.value.toUpperCase())}
                     disabled={isLoggingIn}
                   />
-                  <div className="form-help-text">
-                    Use your library-issued Membership ID to access your account.
-                  </div>
+                
                 </div>
 
                 <div style={{ marginTop: '1.25rem', display: 'flex', gap: '0.75rem' }}>
@@ -228,27 +225,7 @@ export default function UserManagement() {
                   textAlign: 'center',
                 }}
               >
-                <div style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--text-secondary)', marginBottom: '0.6rem' }}>
-                  ⚡ Quick Demo Login (One-click evaluation):
-                </div>
-                <div style={{ display: 'flex', justifyContent: 'center', gap: '0.75rem', flexWrap: 'wrap' }}>
-                  <button
-                    type="button"
-                    onClick={() => handleDemoLogin('admin')}
-                    className="btn btn-secondary btn-sm"
-                  >
-                    <ShieldCheck size={14} className="text-primary" />
-                    <span>Login as Admin (Alexander Wright)</span>
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => handleDemoLogin('member')}
-                    className="btn btn-secondary btn-sm"
-                  >
-                    <User size={14} />
-                    <span>Login as Member (Sarah Connor)</span>
-                  </button>
-                </div>
+                
               </div>
             </div>
           )}
@@ -258,11 +235,8 @@ export default function UserManagement() {
       <div className="card">
         <div className="card-header">
           <h2 className="card-title">
-            <Users size={20} className="text-primary" />
-            <span>Admin View: Registered Library Users</span>
-            <span style={{ fontSize: '0.85rem', fontWeight: 500, color: 'var(--text-muted)' }}>
-              ({users.length} accounts)
-            </span>
+            <span>Admin Management</span>
+
           </h2>
 
           <div style={{ display: 'flex', gap: '0.5rem' }}>

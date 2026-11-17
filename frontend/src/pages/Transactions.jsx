@@ -59,9 +59,8 @@ export default function Transactions() {
 
       <div className="page-header">
         <div>
-          <h1 className="page-title">Stock &amp; Borrowing Transactions</h1>
+          <h1 className="page-title">Stock and Borrowing Transactions</h1>
           <p className="page-subtitle">
-            Manage inventory availability, check out books to members, and record new shipments.
           </p>
         </div>
         <div>

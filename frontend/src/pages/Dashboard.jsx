@@ -103,18 +103,14 @@ export default function Dashboard() {
 
       <div className="page-header">
         <div>
-          <h1 className="page-title">Library Overview &amp; Stock Availability</h1>
-          <p className="page-subtitle">
-            Real-time book inventory tracking, availability status, and borrowing metrics.
-          </p>
+          <h1 className="page-title">Library Overview and Stock Availability</h1>
+
         </div>
         <div style={{ display: 'flex', gap: '0.75rem' }}>
           <button onClick={loadData} className="btn btn-secondary btn-sm" title="Refresh dashboard data">
-            <RefreshCw size={15} />
-            <span>Refresh</span>
+            <span></span>
           </button>
           <Link to="/books" className="btn btn-primary btn-sm">
-            <PlusCircle size={15} />
             <span>Add New Book</span>
           </Link>
         </div>
@@ -124,43 +120,35 @@ export default function Dashboard() {
         <StatCard
           label="Total Book Titles"
           value={stats.totalTitles}
-          subtext="Catalogued in library"
-          icon={BookOpen}
+          subtext="total in library"
           color="indigo"
         />
         <StatCard
           label="Available Copies"
           value={stats.totalCopiesAvailable}
           subtext="Ready for borrowing"
-          icon={Layers}
           color="emerald"
         />
         <StatCard
           label="Low Stock Alerts"
           value={stats.lowStockCount}
           subtext="Fewer than 2 copies left"
-          icon={AlertTriangle}
           color="amber"
         />
         <StatCard
           label="Registered Members"
           value={stats.totalUsers}
           subtext="Active library accounts"
-          icon={Users}
-          color="cyan"
         />
       </div>
 
       {stats.lowStockCount > 0 && (
         <div className="alert-banner warning">
-          <AlertTriangle size={24} style={{ color: '#d97706', flexShrink: 0 }} />
           <div className="alert-banner-content">
             <div className="alert-banner-title">
               Attention: {stats.lowStockCount} Book(s) have Low Stock (&lt; 2 copies)!
             </div>
-            <div className="alert-banner-desc">
-              These titles are either out of stock or close to depletion. Consider restocking from suppliers or following up on returns.
-            </div>
+
           </div>
           <button
             onClick={() => setOnlyLowStock((prev) => !prev)}
@@ -175,7 +163,6 @@ export default function Dashboard() {
       <div className="card">
         <div className="card-header">
           <h2 className="card-title">
-            <BookOpen size={20} className="text-primary" />
             <span>Current Book Availability</span>
             <span style={{ fontSize: '0.85rem', fontWeight: 500, color: 'var(--text-muted)' }}>
               ({books.length} {books.length === 1 ? 'title' : 'titles'} listed)
@@ -183,13 +170,12 @@ export default function Dashboard() {
           </h2>
 
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-            <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>View:</span>
+            <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>layout</span>
             <button
               onClick={() => setViewMode('table')}
               className={`btn btn-sm ${viewMode === 'table' ? 'btn-primary' : 'btn-secondary'}`}
               title="Table Layout"
             >
-              <TableIcon size={14} />
               <span>Table</span>
             </button>
             <button
@@ -197,7 +183,6 @@ export default function Dashboard() {
               className={`btn btn-sm ${viewMode === 'grid' ? 'btn-primary' : 'btn-secondary'}`}
               title="Card Grid Layout"
             >
-              <LayoutGrid size={14} />
               <span>Cards</span>
             </button>
           </div>
@@ -206,11 +191,10 @@ export default function Dashboard() {
         <div className="card-body">
           <div className="controls-bar">
             <div className="search-input-wrapper">
-              <Search size={16} className="search-icon" />
               <input
                 type="text"
                 className="search-input"
-                placeholder="Search by title, author, or ISBN..."
+                placeholder="Search "
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
               />
@@ -218,7 +202,6 @@ export default function Dashboard() {
 
             <div className="filter-group">
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-                <Filter size={15} color="var(--text-muted)" />
                 <select
                   className="form-control"
                   style={{ width: 'auto', padding: '0.45rem 0.8rem' }}
@@ -253,7 +236,7 @@ export default function Dashboard() {
                   checked={onlyLowStock}
                   onChange={(e) => setOnlyLowStock(e.target.checked)}
                 />
-                <span>Low Stock (&lt; 2)</span>
+                <span>Low Stock (less than 2)</span>
               </label>
             </div>
           </div>

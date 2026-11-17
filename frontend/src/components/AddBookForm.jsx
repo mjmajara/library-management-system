@@ -116,8 +116,7 @@ export default function AddBookForm({ onBookAdded, onCancel }) {
     <div className="card">
       <div className="card-header">
         <h3 className="card-title">
-          <PlusCircle size={20} className="text-primary" />
-          <span>Add New Book to Inventory</span>
+          <span>Add New Book </span>
         </h3>
         {onCancel && (
           <button type="button" onClick={onCancel} className="btn btn-secondary btn-sm">
@@ -137,13 +136,13 @@ export default function AddBookForm({ onBookAdded, onCancel }) {
           <div className="form-grid">
             <div className="form-group full-width">
               <label className="form-label" htmlFor="title">
-                Book Title <span className="required">*</span>
+                Book Title <span className="required"></span>
               </label>
               <input
                 id="title"
                 name="title"
                 type="text"
-                placeholder="e.g., Clean Architecture: A Craftsman's Guide"
+                placeholder="lejoe la mantlha"
                 className={`form-control ${errors.title ? 'error' : ''}`}
                 value={formData.title}
                 onChange={handleChange}
@@ -154,13 +153,13 @@ export default function AddBookForm({ onBookAdded, onCancel }) {
 
             <div className="form-group">
               <label className="form-label" htmlFor="author">
-                Author <span className="required">*</span>
+                Author <span className="required"></span>
               </label>
               <input
                 id="author"
                 name="author"
                 type="text"
-                placeholder="e.g., Robert C. Martin"
+                placeholder="tapeiti M Carpet"
                 className={`form-control ${errors.author ? 'error' : ''}`}
                 value={formData.author}
                 onChange={handleChange}
@@ -171,7 +170,7 @@ export default function AddBookForm({ onBookAdded, onCancel }) {
 
             <div className="form-group">
               <label className="form-label" htmlFor="genre">
-                Genre <span className="required">*</span>
+                Genre <span className="required"></span>
               </label>
               <select
                 id="genre"
@@ -192,13 +191,13 @@ export default function AddBookForm({ onBookAdded, onCancel }) {
 
             <div className="form-group">
               <label className="form-label" htmlFor="isbn">
-                ISBN Code <span className="required">*</span>
+                ISBN Code <span className="required"></span>
               </label>
               <input
                 id="isbn"
                 name="isbn"
                 type="text"
-                placeholder="e.g., 978-0134494166"
+                placeholder="123456789"
                 className={`form-control ${errors.isbn ? 'error' : ''}`}
                 value={formData.isbn}
                 onChange={handleChange}
@@ -213,7 +212,7 @@ export default function AddBookForm({ onBookAdded, onCancel }) {
 
             <div className="form-group">
               <label className="form-label" htmlFor="initial_quantity">
-                Initial Stock Quantity <span className="required">*</span>
+                Initial Stock Quantity <span className="required"></span>
               </label>
               <input
                 id="initial_quantity"
@@ -241,12 +240,10 @@ export default function AddBookForm({ onBookAdded, onCancel }) {
               {isSubmitting ? (
                 <>
                   <Loader2 size={16} className="animate-spin" />
-                  <span>Adding Book...</span>
                 </>
               ) : (
                 <>
-                  <PlusCircle size={16} />
-                  <span>Register &amp; Add Book</span>
+                  <span>Register and Add Book</span>
                 </>
               )}
             </button>

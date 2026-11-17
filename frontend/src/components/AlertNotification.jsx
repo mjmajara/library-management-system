@@ -4,13 +4,6 @@ import { CheckCircle, AlertTriangle, AlertCircle, Info, X } from 'lucide-react';
 export default function AlertNotification({ type = 'info', title, message, onClose }) {
   if (!message) return null;
 
-  const icons = {
-    success: <CheckCircle size={20} />,
-    warning: <AlertTriangle size={20} />,
-    danger: <AlertCircle size={20} />,
-    error: <AlertCircle size={20} />,
-    info: <Info size={20} />,
-  };
 
   const alertClass = type === 'error' ? 'danger' : type;
 

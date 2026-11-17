@@ -24,14 +24,12 @@ export default function TransactionHistory({ transactions = [], loading = false 
       case 'BORROW':
         return (
           <span className="stock-badge low-stock" style={{ background: '#fef3c7', color: '#92400e' }}>
-            <ArrowDownCircle size={13} />
             BORROW
           </span>
         );
       case 'RESTOCK':
         return (
           <span className="stock-badge in-stock" style={{ background: '#d1fae5', color: '#065f46' }}>
-            <ArrowUpCircle size={13} />
             RESTOCK
           </span>
         );
@@ -67,8 +65,7 @@ export default function TransactionHistory({ transactions = [], loading = false 
     <div className="card">
       <div className="card-header">
         <h3 className="card-title">
-          <History size={20} className="text-primary" />
-          <span>Transaction &amp; Borrowing History Log</span>
+          <span>Transaction and Borrowing History Log</span>
         </h3>
       </div>
 
@@ -79,7 +76,7 @@ export default function TransactionHistory({ transactions = [], loading = false 
             <input
               type="text"
               className="search-input"
-              placeholder="Search by book, member ID, ISBN, or notes..."
+              placeholder="Search book."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
@@ -115,7 +112,7 @@ export default function TransactionHistory({ transactions = [], loading = false 
 
         {loading ? (
           <div style={{ textAlign: 'center', padding: '2rem 0', color: 'var(--text-muted)' }}>
-            Loading transactions...
+            Loading transactions
           </div>
         ) : filtered.length === 0 ? (
           <div style={{ textAlign: 'center', padding: '2.5rem 1rem', background: '#f8fafc', borderRadius: '10px' }}>

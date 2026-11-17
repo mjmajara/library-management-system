@@ -97,7 +97,6 @@ export default function BookList({
                         className="btn btn-secondary btn-sm"
                         title="Stock Transaction"
                       >
-                        <ArrowLeftRight size={13} />
                         <span>Transact</span>
                       </button>
                     )}
@@ -107,7 +106,6 @@ export default function BookList({
                         className="btn btn-secondary btn-sm"
                         title="Update Book"
                       >
-                        <Edit2 size={13} />
                         <span>Update</span>
                       </button>
                     )}
@@ -117,7 +115,6 @@ export default function BookList({
                         className="btn btn-danger btn-sm"
                         title="Delete Book"
                       >
-                        <Trash2 size={13} />
                         <span>Delete</span>
                       </button>
                     )}

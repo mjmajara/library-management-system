@@ -132,7 +132,6 @@ export default function TransactionForm({
     <div className="card">
       <div className="card-header">
         <h3 className="card-title">
-          <ArrowLeftRight size={20} className="text-primary" />
           <span>Record Stock Transaction (Add / Deduct)</span>
         </h3>
       </div>
@@ -156,7 +155,6 @@ export default function TransactionForm({
                 className={`btn ${formData.type === 'BORROW' ? 'btn-primary' : 'btn-secondary'}`}
                 style={{ justifyContent: 'center' }}
               >
-                <MinusCircle size={16} />
                 <span>Borrow (Deduct)</span>
               </button>
 
@@ -166,7 +164,6 @@ export default function TransactionForm({
                 className={`btn ${formData.type === 'RESTOCK' ? 'btn-primary' : 'btn-secondary'}`}
                 style={{ justifyContent: 'center' }}
               >
-                <PlusCircle size={16} />
                 <span>Restock (Add)</span>
               </button>
 
@@ -176,7 +173,6 @@ export default function TransactionForm({
                 className={`btn ${formData.type === 'RETURN' ? 'btn-primary' : 'btn-secondary'}`}
                 style={{ justifyContent: 'center' }}
               >
-                <RotateCcw size={16} />
                 <span>Return Book</span>
               </button>
             </div>

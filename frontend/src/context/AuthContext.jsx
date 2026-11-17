@@ -43,10 +43,10 @@ export const AuthProvider = ({ children }) => {
     if (role === 'admin') {
       const adminUser = {
         id: 1,
-        name: 'Alexander Wright (Admin)',
-        membership_id: 'ADM-1001',
+        name: 'MAPHIKE MAJARA (Admin)',
+        membership_id: 'MJ-77',
         role: 'admin',
-        email: 'alex.admin@library.edu',
+        email: 'MJ.admin@library.COM',
         status: 'active',
       };
       setCurrentUser(adminUser);
@@ -54,10 +54,10 @@ export const AuthProvider = ({ children }) => {
     } else {
       const memberUser = {
         id: 2,
-        name: 'Sarah Connor (Member)',
-        membership_id: 'MEM-2001',
+        name: 'RETSHEPILE RALETING (Member)',
+        membership_id: 'ACE-77',
         role: 'member',
-        email: 'sarah.c@techuniv.edu',
+        email: 'ACE.MEM@LIB.COM',
         status: 'active',
       };
       setCurrentUser(memberUser);

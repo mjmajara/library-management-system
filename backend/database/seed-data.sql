@@ -1,8 +1,7 @@
 INSERT INTO users (name, membership_id, role, email, status) VALUES
-('Alexander Wright', 'ADM-1001', 'admin', 'alex.wright@library.org', 'active'),
-('Sarah Connor', 'MEM-2001', 'member', 'sarah.c@techuniv.edu', 'active'),
-('David Mitchell', 'MEM-2002', 'member', 'd.mitchell@readmail.com', 'active'),
-('Elena Rostova', 'MEM-2003', 'member', 'elena.rostova@academics.org', 'active');
+('MAPHKE MAJARA', 'MJ-77', 'admin', 'MJ.ADMIN@LIB.COM', 'active'),
+('RETSHEPILE RALETING', 'ACE-77', 'member', 'AC E.MEM@LIB.edu', 'active'),
+
 
 INSERT INTO books (title, author, genre, isbn, initial_quantity, available_quantity) VALUES
 ('Clean Code: A Handbook of Agile Software Craftsmanship', 'Robert C. Martin', 'Computer Science', '978-0132350884', 5, 4),

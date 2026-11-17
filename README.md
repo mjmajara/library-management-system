@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 📚 LibriTrack — Library & Inventory Management System
 
 A full-stack, responsive web application for managing library books, tracking inventory availability, handling stock additions and borrowing deductions, and administering user accounts.
@@ -155,3 +156,13 @@ npm run dev
 ```
 
 Open `http://localhost:3000` in your browser!
+=======
+# Library Management System (React + Vite)
+
+    npm install
+    npm run dev       # development server
+    npm run build     # production build in dist/
+
+Default logins: `majara` / `mj123` (admin), `U002` / `lib123` (librarian).
+Data is stored in localStorage under the same `library_*` keys as the original app.
+>>>>>>> 598f2d86c609ea2fca5e3d9258dba00f92aabb79

@@ -81,19 +81,17 @@ export default function BookManagement() {
         <div>
           <h1 className="page-title">Book Management</h1>
           <p className="page-subtitle">
-            Register new titles, update existing records, and manage library inventory.
+          add new books and update the existing ones
           </p>
         </div>
         <div style={{ display: 'flex', gap: '0.75rem' }}>
           <button onClick={fetchBooks} className="btn btn-secondary btn-sm" title="Refresh book list">
-            <RefreshCw size={15} />
-            <span>Refresh</span>
+            
           </button>
           <button
             onClick={() => setShowAddForm((prev) => !prev)}
             className={`btn btn-sm ${showAddForm ? 'btn-secondary' : 'btn-primary'}`}
           >
-            <Plus size={15} />
             <span>{showAddForm ? 'Hide Add Form' : 'Add New Book'}</span>
           </button>
         </div>
@@ -109,10 +107,9 @@ export default function BookManagement() {
       <div className="card">
         <div className="card-header">
           <h2 className="card-title">
-            <BookMarked size={20} className="text-primary" />
-            <span>Book Inventory Records</span>
+            <span>Book Records</span>
             <span style={{ fontSize: '0.85rem', fontWeight: 500, color: 'var(--text-muted)' }}>
-              ({books.length} titles in catalog)
+              ({books.length} titles available)
             </span>
           </h2>
         </div>
@@ -124,7 +121,7 @@ export default function BookManagement() {
               <input
                 type="text"
                 className="search-input"
-                placeholder="Search catalog by title, author, or ISBN..."
+                placeholder="Search books"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
@@ -132,7 +129,6 @@ export default function BookManagement() {
 
             <div className="filter-group">
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-                <Filter size={15} color="var(--text-muted)" />
                 <select
                   className="form-control"
                   style={{ width: 'auto', padding: '0.45rem 0.8rem' }}

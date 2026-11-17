@@ -61,7 +61,6 @@ export default function BookCard({ book, onEdit, onDelete, onQuickTransact }) {
             className="btn btn-danger btn-sm"
             title="Delete this book"
           >
-            <Trash2 size={14} />
           </button>
         )}
       </div>
