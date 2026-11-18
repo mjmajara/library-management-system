@@ -172,4 +172,4 @@ npm run dev       # development server
 npm run build     # production build in dist/
 npm run deploy    # publish dist/ to GitHub Pages
 ```
-Default logins: `MAPHIKE MAJARA` / `MJ-77` (admin), `RETSHEPILE RALETING` / `ACE-77` (librarian).
+Default logins: `MAPHIKE MAJARA` / `MJ-77` (admin).
