@@ -61,6 +61,7 @@ export default function Transactions() {
         <div>
           <h1 className="page-title">Stock and Borrowing Transactions</h1>
           <p className="page-subtitle">
+            Record book checkouts, returns, and inventory restocks with automated stock level updates.
           </p>
         </div>
         <div>

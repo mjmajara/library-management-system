@@ -166,14 +166,15 @@ export default function UserManagement() {
               </div>
 
               <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
-                {!isAdmin && (
+                {!isAdmin ? (
                   <button onClick={() => handleDemoLogin('admin')} className="btn btn-secondary btn-sm">
-                  
+                    <ShieldCheck size={15} />
+                    <span>Switch to Admin (MJ-77)</span>
                   </button>
-                )}
-                {isAdmin && (
+                ) : (
                   <button onClick={() => handleDemoLogin('member')} className="btn btn-secondary btn-sm">
-                   
+                    <User size={15} />
+                    <span>Switch to Member (ACE-77)</span>
                   </button>
                 )}
                 <button onClick={logout} className="btn btn-danger btn-sm">
@@ -217,15 +218,35 @@ export default function UserManagement() {
 
               <div
                 style={{
-                  marginTop: '1.75rem',
+                  marginTop: '1.5rem',
                   padding: '1rem',
                   background: 'var(--bg-subtle)',
-                  borderRadius: '10px',
+                  borderRadius: '8px',
                   border: '1px dashed var(--border-light)',
                   textAlign: 'center',
                 }}
               >
-                
+                <div style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--text-secondary)', marginBottom: '0.5rem' }}>
+                  Demo Credentials (Click to prefill):
+                </div>
+                <div style={{ display: 'flex', justifyContent: 'center', gap: '0.75rem', flexWrap: 'wrap' }}>
+                  <button
+                    type="button"
+                    onClick={() => setLoginMembershipId('MJ-77')}
+                    className="btn btn-secondary btn-sm"
+                  >
+                    <ShieldCheck size={14} />
+                    <span>Admin: MJ-77 (MAPHIKE MAJARA)</span>
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setLoginMembershipId('ACE-77')}
+                    className="btn btn-secondary btn-sm"
+                  >
+                    <User size={14} />
+                    <span>Member: ACE-77 (RETSHEPILE RALETING)</span>
+                  </button>
+                </div>
               </div>
             </div>
           )}

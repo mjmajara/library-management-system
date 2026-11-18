@@ -70,22 +70,29 @@ app.get('/', (req, res) => {
 app.use(notFoundHandler);
 app.use(errorHandler);
 
-async function startServer() {
-  try {
-    await db.initDatabase();
-    app.listen(PORT, () => {
-      console.log(`=======================================================`);
-      console.log(`  Library Management System Backend is running!`);
-      console.log(`  Local URL: http://localhost:${PORT}`);
-      console.log(`  Database Engine: ${db.getDbInfo().engine.toUpperCase()}`);
-      console.log(`=======================================================`);
-    });
-  } catch (error) {
-    console.error('Failed to start server:', error);
-    process.exit(1);
-  }
+let serverInstance = null;
+
+function startServer(port = PORT) {
+  return new Promise(async (resolve, reject) => {
+    try {
+      await db.initDatabase();
+      serverInstance = app.listen(port, () => {
+        console.log(`=======================================================`);
+        console.log(`  Library Management System Backend is running!`);
+        console.log(`  Local URL: http://localhost:${port}`);
+        console.log(`  Database Engine: ${db.getDbInfo().engine.toUpperCase()}`);
+        console.log(`=======================================================`);
+        resolve(serverInstance);
+      });
+    } catch (error) {
+      console.error('Failed to start server:', error);
+      reject(error);
+    }
+  });
 }
 
-startServer();
+if (require.main === module) {
+  startServer();
+}
 
-module.exports = app;
+module.exports = { app, startServer };

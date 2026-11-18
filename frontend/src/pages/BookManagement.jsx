@@ -86,7 +86,8 @@ export default function BookManagement() {
         </div>
         <div style={{ display: 'flex', gap: '0.75rem' }}>
           <button onClick={fetchBooks} className="btn btn-secondary btn-sm" title="Refresh book list">
-            
+            <RefreshCw size={15} />
+            <span>Refresh</span>
           </button>
           <button
             onClick={() => setShowAddForm((prev) => !prev)}
