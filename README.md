@@ -35,7 +35,7 @@ Built with a **React Frontend** (React Hooks, Router, Controlled Forms, Fetch AP
 - **Transaction History Log**: Comprehensive audit log recording timestamps, book details, member details, transaction type (`BORROW` / `RESTOCK` / `RETURN`), stock change (`prev to new`), and notes.
 
 ### 3. User Management & Authentication
-- **User Authentication Portal**: Login by Membership ID (e.g., `ADM-1001` or `MEM-2001`).
+- **User Authentication Portal**: Login by Membership ID (e.g., `MJ-77` or `ACE-77`).
 - **Quick Demo Switcher**: One-click login for examiners to easily test Admin vs. Member roles.
 - **Admin Control**:
   - Add new users (`Name`, `Membership ID`, `Role`: Admin/Member, `Email`).
